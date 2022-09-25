@@ -1,6 +1,11 @@
 locals {
-    vpc_id = "vpc-05eeea3080049eef3"
-    subnet_ids = [ "subnet-069c612c7fa91ae9c", "subnet-058b253ed92a4a00e"]
+    # vpc 를 destroy 하고 다시 만든 경우
+    # 아래의 변수들을 업데이트 해줘야 한다
+    vpc_id = "vpc-0c95d72ed5a7dc9a6"
+    subnet_ids = [ 
+      "subnet-0d54002b6ad982e85", 
+      "subnet-0c22aba0671dd16f0"
+    ]
     cluster_name = "joybox"
     lb_controller_iam_role_name        = "alb-role"
     lb_controller_service_account_name = "alb-service-account"
@@ -14,8 +19,6 @@ module "eks" {
   cluster_endpoint_private_access = false
   cluster_endpoint_public_access  = true
 
-  # vpc 를 destroy 하고 다시 만든 경우
-  # 아래의 변수들을 업데이트 해줘야 한다
   vpc_id = local.vpc_id
   subnet_ids = local.subnet_ids
 
