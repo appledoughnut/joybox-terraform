@@ -1,3 +1,7 @@
+locals {
+  cluster_name = "joybox"
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.14.4"                        
@@ -15,6 +19,16 @@ module "vpc" {
   
   enable_dns_hostnames = "true"
   enable_dns_support    = "true"
+
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/role/elb"                      = "1"
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/role/internal-elb"             = "1"
+  }
 
   tags = { "TerraformManaged" = "true" }
 }
