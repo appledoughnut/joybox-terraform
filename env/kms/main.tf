@@ -7,7 +7,7 @@ module "kms" {
   key_administrators = ["arn:aws:iam::012345678901:role/admin"]
 
   # Aliases
-  aliases = ["joybox"]
+  aliases = ["joybox-kms"]
 
   tags = {
     Terraform   = "true"
