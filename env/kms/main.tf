@@ -5,6 +5,9 @@ module "kms" {
 
   # Policy
   key_administrators = ["arn:aws:iam::282398598576:role/admin"]
+  key_users          = ["arn:aws:iam::012345678901:role/admin"]
+  key_service_users  = ["arn:aws:iam::012345678901:role/admin"]
+
 
   # Aliases
   aliases = ["joybox-kms"]
