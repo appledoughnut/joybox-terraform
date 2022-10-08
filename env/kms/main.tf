@@ -10,6 +10,7 @@ module "kms" {
   aliases = ["joybox-kms"]
 
   tags = {
+    dummy = "test"
     Terraform   = "true"
   }
 }
