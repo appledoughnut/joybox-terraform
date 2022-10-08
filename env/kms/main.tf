@@ -1,6 +1,3 @@
-provider "aws" {
-
-}
 
 module "kms" {
   source = "terraform-aws-modules/kms/aws"

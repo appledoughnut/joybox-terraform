@@ -1,7 +1,3 @@
-provider "aws" {
-  
-}
-
 resource "aws_ecr_repository" "product-management-web" {
   name                 = "product-management-web"
   image_tag_mutability = "IMMUTABLE"
