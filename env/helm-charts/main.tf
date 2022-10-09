@@ -1,8 +1,10 @@
-resource "aws_ecr_repository" "helm_charts" {
-  name                 = "helm-charts"
-  image_tag_mutability = "IMMUTABLE"
+resource "aws_s3_bucket" "helm_charts" {
+  bucket = "helm-charts"
+}
 
-  image_scanning_configuration {
-    scan_on_push = true
-  }
+resource "aws_s3_bucket_object" "joybox_app" {
+    bucket = "${aws_s3_bucket.helm_charts.id}"
+    acl    = "private"
+    key    = "joybox-app/"
+    content_type = "application/x-directory"
 }
