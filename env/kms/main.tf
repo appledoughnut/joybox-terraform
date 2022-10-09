@@ -4,9 +4,9 @@ module "kms" {
   key_usage   = "ENCRYPT_DECRYPT"
 
   # Policy
-  key_administrators = ["arn:aws:iam::282398598576:role/admin"]
-  key_users          = ["arn:aws:iam::282398598576:role/admin"]
-  key_service_users  = ["arn:aws:iam::282398598576:role/admin"]
+  key_administrators = ["arn:aws:iam::282398598576:user/admin"]
+  key_users          = ["arn:aws:iam::282398598576:user/admin"]
+  key_service_users  = ["arn:aws:iam::282398598576:user/admin"]
 
 
   # Aliases
