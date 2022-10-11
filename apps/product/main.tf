@@ -12,7 +12,7 @@ resource "aws_db_instance" "joybox_product" {
 
   allocated_storage = 20
   engine = "postgres"
-  engine_version = "14.1"
+  engine_version = "14.3"
   instance_class = "db.t3.micro"
 
   db_name = "joybox"
