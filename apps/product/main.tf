@@ -31,3 +31,7 @@ resource "random_password" "db_password" {
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
+
+resource "aws_s3_bucket" "image_bucket" {
+  bucket = "image"
+}
