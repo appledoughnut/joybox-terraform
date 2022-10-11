@@ -32,6 +32,6 @@ resource "random_password" "db_password" {
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
-resource "aws_s3_bucket" "image_bucket" {
-  bucket = "image"
+resource "aws_s3_bucket" "product_image_bucket" {
+  bucket = "joybox-product-images"
 }
